@@ -34,7 +34,7 @@ impl Database for PostgreSQLDatabase {
     }
 }
 
-// Modul tingkat tinggi yang bergantung pada trait Database
+// Modul tingkat tinggi (high-level module) yang bergantung pada trait Database
 struct DataManager<T: Database> {
     database: T,
 }
@@ -54,6 +54,7 @@ fn main() {
     let mysql_database = MySQLDatabase;
     let postgresql_database = PostgreSQLDatabase;
 
+    // DataManager bergantung pada trait Database, bukan implementasi konkret dari MySQLDatabase atau PostgreSQLDatabase
     let mysql_data_manager = DataManager {
         database: mysql_database,
     }; // bisa juga ditulis DataManager::new(mysql_database);
