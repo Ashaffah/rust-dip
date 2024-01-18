@@ -56,8 +56,9 @@ fn main() {
 
     let mysql_data_manager = DataManager {
         database: mysql_database,
-    };
-    let postgresql_data_manager = DataManager::new(postgresql_database);
+    }; // bisa juga ditulis DataManager::new(mysql_database);
+
+    let postgresql_data_manager = DataManager::new(postgresql_database); // bisa juga ditulis DataManager { database: postgresql_database };
 
     let query = "SELECT * FROM users";
 

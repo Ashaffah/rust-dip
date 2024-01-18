@@ -79,14 +79,12 @@ impl<T: Database> DataManager<T> {
 let mysql_database = MySQLDatabase;
 let mysql_data_manager = DataManager {
         database: mysql_database,
-    };
+    }; // bisa juga ditulis DataManager::new(mysql_database);
 ```
 
 5. **Fleksibilitas**: Dengan pendekatan ini, kita dapat dengan mudah mengganti implementasi database tanpa mengubah kode `DataManager`. Sebagai contoh, jika kita ingin beralih dari MySQL ke PostgreSQL, kita hanya perlu mengubah instance `Database` yang diinjeksikan ke dalam `DataManager`.
 
 ```rust
 let postgresql_database = PostgreSQLDatabase;
-let postgresql_data_manager = DataManager::new(postgresql_database);
+let postgresql_data_manager = DataManager::new(postgresql_database); // bisa juga ditulis DataManager { database: postgresql_database };
 ```
-
-Ini adalah contoh yang bagus dari prinsip Dependency Inversion dalam SOLID, di mana kode kita harus bergantung pada abstraksi, bukan pada detail konkret.
