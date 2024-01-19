@@ -82,7 +82,7 @@ let mysql_data_manager = DataManager {
     }; // bisa juga ditulis DataManager::new(mysql_database);
 ```
 
-5. **Fleksibilitas**: Dengan pendekatan ini, kita dapat dengan mudah mengganti implementasi database tanpa mengubah kode `DataManager`. Sebagai contoh, jika kita ingin beralih dari MySQL ke PostgreSQL, kita hanya perlu mengubah instance `Database` yang diinjeksikan ke dalam `DataManager`.
+5. **Fleksibilitas**: Dengan ini, kita dapat dengan mudah mengganti implementasi database tanpa mengubah kode `DataManager`. Sebagai contoh, jika kita ingin beralih dari MySQL ke PostgreSQL, kita hanya perlu mengubah instance `Database` yang diinjeksikan ke dalam `DataManager`.
 
 ```rust
 let postgresql_database = PostgreSQLDatabase;
